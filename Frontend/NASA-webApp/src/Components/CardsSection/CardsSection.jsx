@@ -1,6 +1,7 @@
 // import React, { useState } from 'react'
 import { Link } from 'react-router-dom' // Import Link component
 import './CardsSection.css'
+import roverImg from '../../assets/images/rover.webp'
 
 const CardsSection = () => {
 
@@ -12,7 +13,7 @@ const CardsSection = () => {
             </div>
             <Link to="/marsrover" className="card-link">
                 <div className="card">
-                    <img src="/src/assets/images/rover.webp" />
+                    <img src={roverImg} />
                     <h1>Explore Mars</h1>
                     <p>Surface image of mars captured by NASA's Rovers Curiosity and Perseverance</p>
                     <button className="cardButton">Explore</button>
