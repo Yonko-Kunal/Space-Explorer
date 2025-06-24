@@ -9,7 +9,7 @@ const Footer = () => {
             <div className="footer-content">
                 <div className="footer-logo-section">
                     <h3 className='NasaExplorer'><SiNasa /> NASA Explorer</h3>
-                    <p>Exploring the universe through NASA's open data APIs. Bringing space closer to Earth.</p>
+                    <p>This project is not affiliated with NASA.</p>
                 </div>
                 <div className="footer-links">
                     <div className="footer-links-column">
