@@ -1,0 +1,144 @@
+.footer-section {
+    background-color: #1a1a1a;
+    color: #f5f5f5;
+    padding: 3rem 5rem;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #4a4a4a;
+}
+
+.footer-logo-section {
+    flex-basis: 25%;
+}
+
+.footer-logo-section h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.footer-logo-section p {
+    font-size: 0.9rem;
+    color: #a0a0a0;
+    line-height: 1.6;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+    gap: 5rem;
+}
+
+.footer-links-column {
+    display: flex;
+    flex-direction: column;
+    width: 16rem;
+}
+
+.footer-links-column h4 {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    color: #f5f5f5;
+    font-weight: 500;
+}
+
+.footer-links-column a {
+    color: #a0a0a0;
+    text-decoration: none;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+    cursor: pointer;
+    z-index: 1;
+    position: relative;
+}
+
+.footer-links-column a:hover {
+    color: #388bfd;
+    text-decoration: underline;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.social-icons a {
+    color: #a0a0a0;
+    font-size: 1.5rem;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #388bfd;
+}
+
+.ConnectPara {
+    font-size: 0.9rem;
+    color: #a0a0a0;
+    line-height: 1.6;
+}
+
+.footer-bottom {
+    padding-top: 1.5rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #a0a0a0;
+}
+
+.footer-bottom a {
+    color: #388bfd;
+}
+
+.footer-bottom a:hover {
+    text-decoration: underline;
+}
+
+.NasaExplorer {
+    color: #f5f5f5;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2rem;
+        padding-bottom: 1.5rem;
+    }
+
+    .footer-logo-section {
+        flex-basis: auto;
+        width: 100%;
+        margin-bottom: 1.5rem;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        gap: 2rem;
+        width: 100%;
+        align-items: flex-start;
+    }
+
+    .footer-links-column {
+        width: 100%;
+        max-width: none;
+    }
+
+    .footer-bottom {
+        padding-top: 1rem;
+        font-size: 0.85rem;
+    }
+}
