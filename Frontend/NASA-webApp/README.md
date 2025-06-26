@@ -31,7 +31,7 @@ A modern, responsive web application built with React and Vite that brings you r
 ### Installation
 1. **Clone the repository:**
    ```bash
-   git clone <your-repo-url>
+   git clone https://github.com/Yonko-Kunal/Space-Explorer/tree/main/Frontend/NASA-webApp
    cd Frontend/NASA-webApp
    ```
 2. **Install dependencies:**
