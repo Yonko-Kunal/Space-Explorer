@@ -2,6 +2,7 @@ import { useState, useEffect, useMemo } from 'react'
 import { Link } from 'react-scroll'
 import './Hero.css'
 import CardsSection from '../CardsSection/CardsSection'
+import Navbar from '../Navigation/Navbar'
 import MarsRoverImg from '../../assets/images/NLF_1000_0755717720_847ECM_N0474404NCAM12000_04_195J01_1200.jpg'
 import paleBlueDot from '../../assets/images/pale-blue-dot-revised.webp'
 import carlSagan from '../../assets/images/carlSagan.png'
@@ -46,7 +47,7 @@ function Hero() {
             return (
                 <div
                     key={`${size}-${i}`}
-                    className="star"
+                    className={`star ${size}-stars`}
                     style={{
                         left: `${Math.random() * 100}%`,
                         top: `${Math.random() * 100}%`,
@@ -65,16 +66,10 @@ function Hero() {
     const largeStars = useMemo(() => generateStars(100, 'large'), [])
 
     return (
-        <div className="app">
-            <div className="menu-icon">
-                <div className="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
+        <div className="relative min-h-screen bg-[#0d0d0d]">
+            <Navbar />
 
-            <div className="universe-section">
+            <div className="relative h-screen">
                 <div className="stars-container" style={{ opacity, transform: starsTransform }}>
                     <div className="stars small-stars">{smallStars}</div>
                     <div className="stars medium-stars">{mediumStars}</div>
@@ -82,7 +77,7 @@ function Hero() {
                 </div>
 
                 <div
-                    className="main-content"
+                    className="main-content absolute top-0 left-0 w-full max-w-full h-screen flex flex-col items-center justify-center gap-8 box-border overflow-x-hidden px-10 md:px-0"
                     style={{
                         opacity: opacity,
                         // transform: textTransform,
@@ -90,16 +85,14 @@ function Hero() {
                         '--blur-translate-y': blurTranslateY
                     }}
                 >
-                    <h1 className="universe-title">THE UNIVERSE</h1>
-                    <p className="universe-description">
-                        The universe is a vast and mysterious place. It is home to billions of stars, planets, and galaxies.
-                    </p>
-                    <div className="universe-button-container">
+                    <h1 className="universe-title text-[3rem] font-bold text-[#f5f5f5]  text-center select-none md:text-[8rem]">THE UNIVERSE</h1>
+                    <p className="universe-description text-[#a0a0a0] font-light text-center">The universe is a vast and mysterious place. It is home to billions of stars, planets, and galaxies.</p>
+                    <div className="universe-button-container flex text-[2rem]  gap-5 md:gap-8 md:text-[3rem]">
                         <Link to="cards-section" smooth={true} duration={800}>
-                            <button className="universeExploreBUtton">EXPLORE</button>
+                            <button className="universeExploreBUtton bg-white text-black px-9 py-2.5 rounded text-base font-normal transition-all duration-200 hover:bg-transparent hover:text-white hover:border hover:border-white hover:-translate-x-1 hover:-translate-y-1 hover:shadow-[0.25rem_0.25rem_0_0_#fff]">EXPLORE</button>
                         </Link>
                         <Link to="learn-more-section" smooth={true} duration={800}>
-                            <button className="universeLearnMoreButton">LEARN MORE</button>
+                            <button className="universeLearnMoreButton bg-transparent border border-[#f5f5f5] text-[#f5f5f5] px-9 py-2.5 rounded text-base font-normal transition-all duration-200 hover:bg-[#f5f5f5] hover:text-[#0d0d0d] hover:shadow-[0_0_0_2px_#a0a0a0]">LEARN MORE</button>
                         </Link>
                     </div>
                 </div>
@@ -110,14 +103,14 @@ function Hero() {
             </AnimatedSection>
             <div className="LearnMoreSection" id="learn-more-section">
                 <AnimatedSection>
-                    <h1 className='LearnMoreSectionTitle'> Learn More About This Project</h1>
+                    <h1 className='LearnMoreSectionTitle text-[1.5rem] md:text-[2rem]'> Learn More About This Project</h1>
                 </AnimatedSection>
                 <AnimatedSection className="sectionOne">
                     <p>This website brings you real images from the surface of Mars, captured by NASA's rovers — the Curiosity and Perseverance rovers. These stunning visuals are retrieved in real-time using NASA's Mars Rover Photos API, a publicly available service that provides direct access to the treasure trove of space exploration data.</p>
                     <img src={MarsRoverImg} alt="Mars Rover" />
                 </AnimatedSection>
                 <AnimatedSection className="sectionTwo">
-                    <h1 className='sectionTwoTitle'>How it works</h1>
+                    <h1 className='sectionTwoTitle text-[1.5rem] pb-[4rem] md:text-[2rem]'>How it works</h1>
                     <p>Every day, NASA uploads photos taken by the Mars rovers to their public database. This website uses JavaScript and NASA's open API to fetch those images based on rover name, camera type, and Earth date or Martian sol (Mars day). When you browse this site, you're seeing real-time data pulled directly from NASA's servers!</p>
                 </AnimatedSection>
                 <AnimatedSection className="sectionThree">

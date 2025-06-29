@@ -48,7 +48,6 @@ const MarsRover = () => {
             try {
                 const secret = import.meta.env.VITE_SECRET;
 
-                // Build API URL with camera parameter if not 'all'
                 let apiUrl = `https://api.nasa.gov/mars-photos/api/v1/rovers/${rover.toLowerCase()}/photos?sol=1000&api_key=${secret}`;
                 if (camera !== 'all') {
                     apiUrl += `&camera=${camera}`;
