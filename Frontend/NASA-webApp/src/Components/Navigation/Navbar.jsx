@@ -19,6 +19,20 @@ const Navbar = () => {
         }
     };
 
+    // Prevent body scroll when drawer is open
+    useEffect(() => {
+        if (drawerOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'unset';
+        }
+
+        // Cleanup function to restore scroll when component unmounts
+        return () => {
+            document.body.style.overflow = 'unset';
+        };
+    }, [drawerOpen]);
+
     // Close drawer when clicking outside
     useEffect(() => {
         function handleClickOutside(event) {
@@ -63,7 +77,7 @@ const Navbar = () => {
                                 {/* Drawer */}
                                 <div
                                     ref={drawerRef}
-                                    className="fixed top-0 left-0 h-full w-[70vw] max-w-[400px] min-w-[220px] bg-[#1a1a1a] z-50 shadow-lg flex flex-col p-6 animate-slideIn justify-between"
+                                    className="fixed top-0 left-0 h-[100vh] w-[70vw] max-w-[400px] min-w-[220px] bg-[#1a1a1a] z-50 shadow-lg flex flex-col p-6 animate-slideIn"
                                     style={{ width: '30vw', minWidth: 220, maxWidth: 400 }}
                                 >
                                     <div>
@@ -82,7 +96,7 @@ const Navbar = () => {
                                     </div>
                                     <button
                                         onClick={handleLogout}
-                                        className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded text-base transition-colors cursor-pointer w-full text-left mt-auto"
+                                        className="bg-transparent  text-white px-4 py-2 rounded text-base transition-colors cursor-pointer w-full text-left  "
                                     >
                                         Logout
                                     </button>

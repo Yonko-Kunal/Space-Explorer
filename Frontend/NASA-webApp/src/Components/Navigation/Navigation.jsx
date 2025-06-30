@@ -21,7 +21,7 @@ const Navigation = () => {
                     </span>
                     <button
                         onClick={handleLogout}
-                        className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded text-sm transition-colors"
+                        className="bg-transparent hover:bg-red-700 text-white px-4 py-2 rounded text-sm transition-colors"
                     >
                         Logout
                     </button>
