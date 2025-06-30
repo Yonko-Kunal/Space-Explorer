@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useAuth } from '../../contexts/AuthContext';
 import { useNavigate, Link } from 'react-router-dom';
 import { FcGoogle } from 'react-icons/fc';
@@ -10,6 +10,11 @@ const Login = () => {
     const [loading, setLoading] = useState(false);
     const { login, signInWithGoogle } = useAuth();
     const navigate = useNavigate();
+
+    // Scroll to top when component mounts
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     async function handleSubmit(e) {
         e.preventDefault();
