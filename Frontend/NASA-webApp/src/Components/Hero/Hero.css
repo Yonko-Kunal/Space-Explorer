@@ -57,6 +57,50 @@ button {
     justify-content: center;
 }
 
+.apod-section {
+    position: relative;
+    background: #0d0d0d;
+    color: #f5f5f5;
+    z-index: 2;
+}
+
+.apod-section img {
+    transition: transform 0.3s ease;
+}
+
+.apod-section img:hover {
+    transform: scale(1.02);
+}
+
+.apod-section .text-justify {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.apod-section .hyphens-auto {
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+}
+
+.apod-section .whitespace-pre-line {
+    white-space: pre-line;
+}
+
+.apod-section .leading-6 {
+    line-height: 1.5rem;
+}
+
+.apod-section .leading-7 {
+    line-height: 1.75rem;
+}
+
+.apod-section .max-w-full {
+    max-width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
 /* Existing star styles */
 .stars {
     position: absolute;
@@ -485,5 +529,21 @@ button {
         width: 100%;
         max-width: 100vw;
         overflow-x: hidden;
+    }
+
+    .apod-section {
+        padding: 2rem 1rem;
+        width: 100%;
+        max-width: 100vw;
+        overflow-x: hidden;
+    }
+
+    .apod-section .flex-col.lg\:flex-row {
+        flex-direction: column;
+    }
+
+    .apod-section .lg\:w-2\/3,
+    .apod-section .lg\:w-1\/3 {
+        width: 100%;
     }
 }

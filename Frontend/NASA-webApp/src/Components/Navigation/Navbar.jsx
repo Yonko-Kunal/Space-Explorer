@@ -51,7 +51,7 @@ const Navbar = () => {
     }, [drawerOpen]);
 
     return (
-        <nav className="w-full p-[1rem] md:py-4 md:px-8 bg-transparent flex items-center justify-between">
+        <nav className="w-full p-[1rem] md:py-4 md:px-8 bg-transparent flex items-center justify-between fixed top-0 left-0 z-50">
             {/* Left side: (optional logo/title) */}
             <div />
             {/* Right side: Auth buttons */}
@@ -81,13 +81,6 @@ const Navbar = () => {
                                     style={{ width: '30vw', minWidth: 220, maxWidth: 400 }}
                                 >
                                     <div>
-                                        <button
-                                            onClick={() => setDrawerOpen(false)}
-                                            className="self-end mb-6 text-2xl text-gray-700 hover:text-white focus:outline-none"
-                                            aria-label="Close menu"
-                                        >
-                                            <FiX />
-                                        </button>
                                         <div className="mb-8">
                                             <span className="text-gray-200 text-base block mb-1">Welcome,</span>
                                             <span className="text-white text-lg font-semibold break-all">{currentUser.displayName || currentUser.email}</span>

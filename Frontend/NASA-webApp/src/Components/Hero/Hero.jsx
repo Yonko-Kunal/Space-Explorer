@@ -1,5 +1,6 @@
 import { useState, useEffect, useMemo } from 'react'
 import { Link } from 'react-scroll'
+import axios from 'axios'
 import './Hero.css'
 import CardsSection from '../CardsSection/CardsSection'
 import Navbar from '../Navigation/Navbar'
@@ -10,7 +11,48 @@ import AnimatedSection from '../AnimatedSection/AnimatedSection'
 
 function Hero() {
     const [scrollY, setScrollY] = useState(0)
+    const [APOD, setAPOD] = useState([])
+    const [APODHDUrl, setAPODHDUrl] = useState([])
+    const [APODExplanation, setAPODExplanation] = useState([])
+    const [APODTitle, setAPODTitle] = useState([])
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
 
+    const fetchAPOD = async () => {
+        setLoading(true)
+        setError(null)
+        try {
+            const secret = import.meta.env.VITE_SECRET
+            let apiUrl = `https://api.nasa.gov/planetary/apod?api_key=${secret}`
+            const response = await axios.get(apiUrl)
+
+            // Check if the APOD is an image (not a video)
+            if (response.data.media_type === 'image') {
+                setAPOD(response.data.url)
+            } else {
+                // If it's a video, we'll skip it for the background
+                setAPOD(null)
+                console.log('APOD is a video, skipping background image')
+            }
+            setAPODExplanation(response.data.explanation)
+            setAPODTitle(response.data.title)
+            setAPODHDUrl(response.data.hdurl)
+        } catch (err) {
+            setError(`Failed to fetch data: ${err.message}`)
+            setAPOD(null)
+            console.error('API Error:', err)
+        } finally {
+            setLoading(false)
+        }
+    }
+    const handleHdImage = () => {
+        window.open(APODHDUrl, '_blank', 'noopener,noreferrer')
+    }
+
+    // Fetch APOD on component mount
+    useEffect(() => {
+        fetchAPOD()
+    }, [])
     useEffect(() => {
         let ticking = false
 
@@ -101,6 +143,70 @@ function Hero() {
             <AnimatedSection className="cards-section" id="cards-section">
                 <CardsSection />
             </AnimatedSection>
+
+            {/* APOD Section */}
+            <AnimatedSection className="apod-section py-16 bg-[#0d0d0d]" id="apod-section">
+                <div className="max-w-6xl mx-auto px-6">
+                    <div className="text-center mb-12">
+                        <h2 className="text-[1.5rem] md:text-[2rem] mb-4 text-left">
+                            Astronomy Picture of the Day
+                        </h2>
+                        <p className="text-gray-400 font-light text-left">
+                            Discover the cosmos! Each day a different image or photograph of our fascinating universe is featured, along with a brief explanation written by a professional astronomer.
+                        </p>
+                    </div>
+
+                    {loading && (
+                        <div className="flex justify-center items-center h-96">
+                            <div className="text-white text-xl">Loading NASA's Astronomy Picture of the Day...</div>
+                        </div>
+                    )}
+
+                    {!loading && APOD && !error && (
+                        <div className="flex flex-col lg:flex-row gap-8 items-center">
+                            <div className="lg:w-2/3">
+                                <img
+                                    src={APOD}
+                                    alt="NASA Astronomy Picture of the Day"
+                                    className="w-full h-auto rounded-lg shadow-2xl"
+                                    loading="lazy"
+                                    onClick={handleHdImage}
+                                />
+                            </div>
+                            <div className="lg:w-1/3 text-white">
+                                <h3 className="text-2xl font-semibold mb-4">{APODTitle}</h3>
+                                <div className="text-gray-300 leading-relaxed text-justify hyphens-auto">
+                                    <p className="whitespace-pre-line text-sm md:text-base">
+                                        {APODExplanation}
+                                    </p>
+                                </div>
+                                <div className="mt-6">
+                                    <a
+                                        href="https://apod.nasa.gov/apod/astropix.html"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="inline-flex items-center px-6 py-3 bg-white text-black rounded-lg hover:bg-gray-100 transition-colors duration-200"
+                                    >
+                                        Visit APOD Website
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    )}
+
+                    {!loading && error && (
+                        <div className="text-center py-16">
+                            <div className="text-red-400 text-xl mb-4">
+                                Unable to load NASA's Astronomy Picture of the Day
+                            </div>
+                            <p className="text-gray-400">
+                                Please check your internet connection and try again later.
+                            </p>
+                        </div>
+                    )}
+                </div>
+            </AnimatedSection>
+
             <div className="LearnMoreSection" id="learn-more-section">
                 <AnimatedSection>
                     <h1 className='LearnMoreSectionTitle text-[1.5rem] md:text-[2rem]'> Learn More About This Project</h1>
