@@ -22,8 +22,8 @@ function Hero() {
         setLoading(true)
         setError(null)
         try {
-            const secret = import.meta.env.VITE_SECRET
-            let apiUrl = `https://api.nasa.gov/planetary/apod?api_key=${secret}`
+            const apiBaseUrl = import.meta.env.VITE_API_BASE_URL
+            let apiUrl = `${apiBaseUrl}/api/apod`
             const response = await axios.get(apiUrl)
 
             // Check if the APOD is an image (not a video)
