@@ -2,7 +2,7 @@
 
 A modern, responsive web application built with React and Vite that brings you real images and data from the surface of Mars, captured by NASA's Curiosity and Perseverance rovers. The app uses NASA's public APIs to fetch and display space exploration data and imagery.
 
-[Live link]((https://yonko-space-explorer.netlify.app))
+[Live link](https://yonko-space-explorer.netlify.app)
 
 ## Features
 
